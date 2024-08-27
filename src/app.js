@@ -14,21 +14,34 @@ window.onload = function() {
 };
 
 const generateExcuse = () => {
-  let who = ["The dog", "The Police", "Lucifer", "My Fish"];
-  let action = ["late", "didnt make it", "damaged", "ripped"];
-  let what = ["My Ipad", "my phone", "My shoes", "My swimming pool"];
+  let who = [
+    "My dog",
+    "The Police",
+    "Lucifer",
+    "My Fish",
+    "UPS Driver",
+    "neighbor"
+  ];
+  let action = ["wet", "pooped", "damaged", "ate", "stole", "hid"];
+  let what = [
+    "My Ipad",
+    "my car",
+    "my arm",
+    " in my swimming pool",
+    "my mailbox"
+  ];
   let when = [
-    "before work",
+    "While I was on vacation",
     "when I was sleeping",
-    "while I was hiking",
-    "during my zumba class",
-    "Playing video games"
+    "while I was at the gym",
+    "during my coding class",
+    "when I was playing video games"
   ];
 
-  let whoindex = math.floor(math.random * who.length);
-  let actionindex = math.floor(math.random * action.length);
-  let whatindex = math.floor(math.random * what.length);
-  let whenindex = math.floor(math.random * when.length);
+  let whoindex = Math.floor(Math.random() * who.length);
+  let actionindex = Math.floor(Math.random() * action.length);
+  let whatindex = Math.floor(Math.random() * what.length);
+  let whenindex = Math.floor(Math.random() * when.length);
 
   console.log(
     who[whoindex],
@@ -38,6 +51,13 @@ const generateExcuse = () => {
   );
 
   let excuse =
-    who[whoindex] + action[actionindex] + what[whatindex] + when[whenindex];
-  document.querySelector("#excuse").innerHTML = excuse;
+    who[whoindex] +
+    " " +
+    " " +
+    action[actionindex] +
+    " " +
+    what[whatindex] +
+    " " +
+    when[whenindex];
+  document.querySelector(".excuse").innerHTML = excuse;
 };
